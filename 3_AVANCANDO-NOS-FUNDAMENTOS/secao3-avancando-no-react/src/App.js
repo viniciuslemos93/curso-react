@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 
 import City from './assets/city.jpg'
+import CarDetails from './components/CarDetails';
 import ConditionalRender from './components/ConditionalRender';
 import ListRender from './components/ListRender';
 
@@ -29,10 +30,14 @@ function App() {
       <ListRender />
 
       <ConditionalRender />
+      {/*Props*/}
       {/*O componente ShowUserName tem acesso a uma prop chamado "name" com o valor de "Vinicius", o outro com uma variável e o útimo passando com useState.*/}
       <ShowUserName name="Vinicius" />
       <ShowUserName name={nome} />
       <ShowUserName name={userName} />
+      {/*Destructuring*/}
+      <CarDetails brand="VW" km={10000} color="Azul"/>
+
     </div>
   );
 }
