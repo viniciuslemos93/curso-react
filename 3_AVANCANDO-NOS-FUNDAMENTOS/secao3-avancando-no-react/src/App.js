@@ -12,6 +12,12 @@ import ShowUserName from './components/ShowUserName';
 function App() {
   const nome = "João"
   const [userName] = useState("Maria")
+  
+  const cars = [
+    { id: 1, brand: "Ferrari", color: "Vermelho", newCar:true, km: 0 },
+    { id: 2, brand: "Kia", color: "Prata", newCar: false, km: 34500 },
+    { id: 3, brand: "Ferrari", color: "Amarela", newCar: false, km: 10000 }
+  ]
 
   return (
     <div className="App">
@@ -36,7 +42,21 @@ function App() {
       <ShowUserName name={nome} />
       <ShowUserName name={userName} />
       {/*Destructuring*/}
-      <CarDetails brand="VW" km={10000} color="Azul"/>
+      <CarDetails brand="VW" km={10000} color="Azul" newCar={false}/>
+      {/*Reaproveitando o Card de carros */}
+      <CarDetails brand="Ford" km={0} color="Preto" newCar={true}/>
+      <CarDetails brand="Fiat" km={4500} color="Branco" newCar={false}/>
+
+      {/*Loop em array de objetos - Loop de componente*/}
+      {/*cada iteração imprimir 1 componente*/}
+      {cars.map((car) => (        
+        <CarDetails
+          brand={car.brand}
+          color={car.color}
+          km={car.km}
+          newCar={car.newCar}
+        />
+      ))}
 
     </div>
   );
