@@ -10,7 +10,7 @@ var body = document.querySelector("body")
 //inserimos o elemento criado no como filho co body
 body.appendChild(novoParagrafo)
 
-//Inserindo o parágrafo no container criado
+//Inserindo um parágrafo com span no container criado
 var container = document.querySelector("#container")
 console.log(container)
 
