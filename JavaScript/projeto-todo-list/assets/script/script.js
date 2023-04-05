@@ -20,9 +20,19 @@ function addTask() {
         const list = document.querySelector("#task-list")
         list.appendChild(newTask)
 
+        // adicionar o evento de remover
+        const removeBTN = newTask.querySelector(".remove-btn").addEventListener("click", function() {
+            removeTask(this)
+        });
+
         // limpar texto
         document.querySelector("#task-title").value = ""
     }
+}
+
+// Função de remover tasks
+function removeTask(task) {
+    task.parentNode.remove(true) // acessando o elemento pai e removendo
 }
 
 // Evento de adicionar tarefa.
@@ -32,4 +42,6 @@ addBtn.addEventListener("click", function(e) {
     e.preventDefault()//Para não submeter o formulário
     addTask()
 })
+
+
 
