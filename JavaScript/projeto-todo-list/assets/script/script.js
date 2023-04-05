@@ -25,6 +25,11 @@ function addTask() {
             removeTask(this)
         });
 
+        // adicionar evento de completar tarefa
+        const doneBtn = newTask.querySelector(".done-btn").addEventListener("click", function() {
+            completeTask(this)
+        })
+
         // limpar texto
         document.querySelector("#task-title").value = ""
     }
@@ -35,6 +40,15 @@ function removeTask(task) {
     task.parentNode.remove(true) // acessando o elemento pai e removendo
 }
 
+// Função de completar tarefa
+function completeTask(task) {
+    const taskComplete = task.parentNode
+    /* A função toggle verifica se tem a classe, se tiver ele remove, se não tiver ele coloca.
+    Assim não precisamos usar o if else*/
+    taskComplete.classList.toggle("done")
+
+}
+
 // Evento de adicionar tarefa.
 const addBtn = document.querySelector("#add-btn")
 
@@ -42,6 +56,3 @@ addBtn.addEventListener("click", function(e) {
     e.preventDefault()//Para não submeter o formulário
     addTask()
 })
-
-
-
