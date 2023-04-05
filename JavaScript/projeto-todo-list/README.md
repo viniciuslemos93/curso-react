@@ -25,7 +25,7 @@
 
 <h1 align="center">Resultado</h1>
 <div align="center">
-<img align="center" alt="Design do site" width="500" src="gif-projeto.gif">
+<img align="center" alt="Design do site" width="500" src="todo.png">
 </div>
 
 ### Deploy: 
