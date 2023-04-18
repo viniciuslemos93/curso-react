@@ -8,6 +8,8 @@ import ListRender from './components/ListRender';
 
 import ManageData from './components/ManageData';
 import ShowUserName from './components/ShowUserName';
+import Fragmentss from './components/Fragmentss';
+import Container from './components/Container';
 
 function App() {
   const nome = "João"
@@ -57,6 +59,18 @@ function App() {
           newCar={car.newCar}
         />
       ))}
+
+      {/* Fragment */}
+      <Fragmentss propFragment="teste" />
+      
+      {/* Children */}
+      <Container myValue="Testing">
+        <p>E este é o conteúdo!</p>
+      </Container>
+
+      <Container myValue="Testing 2">
+        <h5>E este é o conteúdo do container 2!</h5>
+      </Container>
 
     </div>
   );
