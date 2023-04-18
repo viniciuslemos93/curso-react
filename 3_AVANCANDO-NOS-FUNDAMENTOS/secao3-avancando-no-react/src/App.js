@@ -67,7 +67,6 @@ function App() {
         />
       ))}
 
-<<<<<<< HEAD
       {/* Fragment */}
       <Fragmentss propFragment="teste" />
       
@@ -82,10 +81,6 @@ function App() {
 
       {/* executar função com Prop */}
       <ExecuteFunction myFunction={showMessage}/>
-=======
-      {/* Fragments */}
-      <Fragmento propFragment="teste" />
->>>>>>> acb283d16e1035145020a3835a380e8db2a429cb
     </div>
   );
 }
