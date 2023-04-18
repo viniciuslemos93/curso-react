@@ -10,6 +10,7 @@ import ManageData from './components/ManageData';
 import ShowUserName from './components/ShowUserName';
 import Fragmentss from './components/Fragmentss';
 import Container from './components/Container';
+import ExecuteFunction from './components/ExecuteFunction';
 
 function App() {
   const nome = "João"
@@ -20,6 +21,10 @@ function App() {
     { id: 2, brand: "Kia", color: "Prata", newCar: false, km: 34500 },
     { id: 3, brand: "Ferrari", color: "Amarela", newCar: false, km: 10000 }
   ]
+
+  function showMessage() {
+    console.log("Evento do componente Pai")
+  }
 
   return (
     <div className="App">
@@ -53,6 +58,7 @@ function App() {
       {/*cada iteração imprimir 1 componente*/}
       {cars.map((car) => (        
         <CarDetails
+        key={car.id}
           brand={car.brand}
           color={car.color}
           km={car.km}
@@ -72,6 +78,8 @@ function App() {
         <h5>E este é o conteúdo do container 2!</h5>
       </Container>
 
+      {/* executar função com Prop */}
+      <ExecuteFunction myFunction={showMessage}/>
     </div>
   );
 }
