@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import './App.css';
 
 import City from './assets/city.jpg'
 import CarDetails from './components/CarDetails';
 import ConditionalRender from './components/ConditionalRender';
+import Fragmento from './components/Fragmento';
 import ListRender from './components/ListRender';
 
 import ManageData from './components/ManageData';
@@ -66,6 +67,7 @@ function App() {
         />
       ))}
 
+<<<<<<< HEAD
       {/* Fragment */}
       <Fragmentss propFragment="teste" />
       
@@ -80,6 +82,10 @@ function App() {
 
       {/* executar função com Prop */}
       <ExecuteFunction myFunction={showMessage}/>
+=======
+      {/* Fragments */}
+      <Fragmento propFragment="teste" />
+>>>>>>> acb283d16e1035145020a3835a380e8db2a429cb
     </div>
   );
 }
