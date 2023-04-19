@@ -12,6 +12,8 @@ import ShowUserName from './components/ShowUserName';
 import Fragmentss from './components/Fragmentss';
 import Container from './components/Container';
 import ExecuteFunction from './components/ExecuteFunction';
+import Message from './components/Message';
+import ChangeMessageState from './components/ChangeMessageState';
 
 function App() {
   const nome = "João"
@@ -25,6 +27,11 @@ function App() {
 
   function showMessage() {
     console.log("Evento do componente Pai")
+  }
+
+  const [message, setMessage] = useState("")
+  const handleMessage = (msg) => {
+    setMessage(msg)
   }
 
   return (
@@ -81,6 +88,10 @@ function App() {
 
       {/* executar função com Prop */}
       <ExecuteFunction myFunction={showMessage}/>
+
+      {/* state lift */}
+      <Message msg={message} />
+      <ChangeMessageState handleMessage={handleMessage} />
     </div>
   );
 }
