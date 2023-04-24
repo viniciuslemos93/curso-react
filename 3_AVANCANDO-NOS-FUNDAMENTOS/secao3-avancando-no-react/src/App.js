@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 
 import City from './assets/city.jpg'
@@ -14,6 +14,7 @@ import Container from './components/Container';
 import ExecuteFunction from './components/ExecuteFunction';
 import Message from './components/Message';
 import ChangeMessageState from './components/ChangeMessageState';
+import UserDetails from './components/UserDetails';
 
 function App() {
   const nome = "João"
@@ -33,6 +34,32 @@ function App() {
   const handleMessage = (msg) => {
     setMessage(msg)
   }
+
+  const pessoa = [
+    {
+      nome: "Vinicius",
+      idade: 29,
+      profissao: "Developer"
+    },
+    {
+      nome: "João",
+      idade: 37,
+      profissao: "Pintor"
+    },
+    {
+      nome: "Guanabara",
+      idade: 40,
+      profissao: "Professor"
+    },
+  ]
+
+  const users = [
+    {id: 1, name: "Vincius", job: "Dev", age: 29},
+    {id: 2, name: "João", job: "Carpinteiro", age: 44},
+    {id: 3, name: "Mário", job: "Gamer", age: 22},
+    {id: 4, name: "Ricardo", job: "Soldador", age: 33},
+    {id: 5, name: "Theo", job: "Soldador", age: 16},
+  ]
 
   return (
     <div className="App">
@@ -92,6 +119,16 @@ function App() {
       {/* state lift */}
       <Message msg={message} />
       <ChangeMessageState handleMessage={handleMessage} />
+      {/*Desafio*/}
+      {users.map((user) => (
+        <UserDetails
+        key={user.id}
+        name={user.name}
+        job={user.job}
+        age={user.age}
+        />
+      ))}
+      
     </div>
   );
 }
